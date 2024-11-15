@@ -1,0 +1,17 @@
+﻿@model MVC_Store.Models.tblCategory
+@{
+    ViewBag.Title = "Bring";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "Category", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Name</label>
+        @Html.TextBoxFor(m => m.categoryName, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.categoryId)
+    <div style="margin-top:10px">
+        <button class="btn btn-success">UPDATE</button>
+    </div>
+}

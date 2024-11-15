@@ -1,0 +1,25 @@
+﻿@model MVC_Store.Models.tblEmployee
+@{
+    ViewBag.Title = "Bring";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "Employee", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Name</label>
+        @Html.TextBoxFor(m => m.employeeName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Surname</label>
+        @Html.TextBoxFor(m => m.employeeSurname, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Department</label>
+        @Html.TextBoxFor(m => m.employeeDepartment, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.employeeId)
+    <div style="margin-top:10px">
+        <button class="btn btn-success">UPDATE</button>
+    </div>
+}

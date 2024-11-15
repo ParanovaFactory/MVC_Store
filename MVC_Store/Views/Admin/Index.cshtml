@@ -1,0 +1,63 @@
+﻿@model MVC_Store.Models.tblAdmin
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+
+    New Admin
+
+</button>
+
+<div class="modal" id="Modal1">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2 class="modal-title">Admin Ekleme Paneli</h2>
+
+            </div>
+
+            <form method="post" action="/Admin/Add">
+
+                <div class="modal-body">
+
+                    <label>
+
+                        Username
+
+                    </label>
+
+                    @Html.TextBoxFor(m => m.userName, new { @class = "form-control" })
+
+                    <br />
+
+                    <label>
+
+                        Password
+
+                    </label>
+
+                    @Html.TextBoxFor(m => m.password, new { @class = "form-control" })
+
+
+
+                    <br />
+
+                    <button type="submit" class="btn btn-info">SAVE</button>
+
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">CANCEL</button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

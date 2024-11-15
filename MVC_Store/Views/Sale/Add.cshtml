@@ -1,0 +1,29 @@
+﻿@model MVC_Store.Models.tblSale
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Product</label>
+        @Html.DropDownListFor(m => m.tblProduct.productId, (List<SelectListItem>)ViewBag.prd, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label>Employe</label>
+        @Html.DropDownListFor(m => m.tblEmployee.employeeId, (List<SelectListItem>)ViewBag.emp, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label>Customer</label>
+        @Html.DropDownListFor(m => m.tblCustomer.customerId, (List<SelectListItem>)ViewBag.cst, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Amount</label>
+        <input type="text" class="form-control" name="saleAmount" id="saleAmount" />
+    </div>
+    <div style="margin-top:10px">
+        <button class="btn btn-success">SAVE</button>
+    </div>
+</form>

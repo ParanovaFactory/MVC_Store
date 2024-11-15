@@ -1,0 +1,72 @@
+﻿@using MVC_Store.Models
+@model List<tblProduct>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Categories</h2>
+
+    @using(Html.BeginForm("Index","Product",FormMethod.Get))
+            {
+                <p>
+                    Product: @Html.TextBox("p");
+                    <input type="submit" value="Search" />
+                </p>
+            }
+
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Stock</th>
+            <th>Buy Price</th>
+            <th>Sell Price</th>
+            <th>Category</th>
+            <th>Operations</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.productId</td>
+                <td>@item.productName</td>
+                <td>@item.productBrand</td>
+                <td>@item.productStock</td>
+                <td>@item.productBuyPrice</td>
+                <td>@item.productSellPrice</td>
+                <td>@item.tblCategory.categoryName</td>
+                <td>
+                    <a href="/Product/Bring/@item.productId" class="btn btn-warning">Update</a>
+                    <a href="/Product/Delete/@item.productId" class="btn btn-danger">Delete</a>
+
+                </td>
+            </tr>
+        }
+    </table>
+    <a href="/Product/Add" class="btn btn-info">Add New Category</a>
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿@using MVC_Store.Models
+@model List<tblEmployee>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Categories</h2>
+
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Department</th>
+            <th>Operations</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.employeeId</td>
+                <td>@item.employeeName</td>
+                <td>@item.employeeSurname</td>
+                <td>@item.employeeDepartment</td>
+                <td>
+                    <a href="/Employee/Bring/@item.employeeId" class="btn btn-warning">Update</a>
+                    <a href="/Employee/Delete/@item.employeeId" class="btn btn-danger">Delete</a>
+
+                </td>
+            </tr>
+        }
+    </table>
+    <a href="/Employee/Add" class="btn btn-info">Add New Category</a>
+</body>
+</html>

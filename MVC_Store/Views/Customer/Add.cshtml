@@ -1,0 +1,27 @@
+﻿@model MVC_Store.Models.tblCustomer
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Name</label>
+        <input type="text" class="form-control" name="customerName" id="customerName" />
+    </div>
+    <div>
+        <label>Surname</label>
+        <input type="text" class="form-control" name="customerSurname" id="customerSurname" />
+    </div>
+    <div>
+        <label>City</label>
+        <input type="text" class="form-control" name="customerCity" id="customerCity" />
+    </div>
+    <div>
+        <label>Amount</label>
+        <input type="text" class="form-control" name="customerAmount" id="customerAmount" />
+    </div>
+    <div style="margin-top:10px">
+        <button class="btn btn-success">SAVE</button>
+    </div>
+</form>

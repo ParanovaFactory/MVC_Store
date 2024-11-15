@@ -1,0 +1,31 @@
+﻿@model MVC_Store.Models.tblSale
+@{
+    ViewBag.Title = "Bring";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "Sale", FormMethod.Post))
+{
+    <div>
+        <label>Product</label>
+        @Html.DropDownListFor(m => m.tblProduct.productId, (List<SelectListItem>)ViewBag.prd, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label>Employe</label>
+        @Html.DropDownListFor(m => m.tblEmployee.employeeId, (List<SelectListItem>)ViewBag.emp, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label>Customer</label>
+        @Html.DropDownListFor(m => m.tblCustomer.customerId, (List<SelectListItem>)ViewBag.cst, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Name</label>
+        @Html.TextBoxFor(m => m.saleAmount, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.saleId)
+    <div style="margin-top:10px">
+        <button class="btn btn-success">UPDATE</button>
+    </div>
+}

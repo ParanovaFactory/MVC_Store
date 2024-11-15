@@ -1,0 +1,35 @@
+﻿@model MVC_Store.Models.tblProduct
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Name</label>
+        <input type="text" class="form-control" name="productName" id="productName" />
+    </div>
+    <div>
+        <label>Brand</label>
+        <input type="text" class="form-control" name="productBrand" id="productBrand" />
+    </div>
+    <div>
+        <label>Stock</label>
+        <input type="text" class="form-control" name="productStock" id="productStock" />
+    </div>
+    <div>
+        <label>Buy Price</label>
+        <input type="text" class="form-control" name="productBuyPrice" id="productBuyPrice" />
+    </div>
+    <div>
+        <label>Sell Price</label>
+        <input type="text" class="form-control" name="productSellPrice" />
+    </div>
+    <div>
+        <label>Category</label>
+        @Html.DropDownListFor(m => m.tblCategory.categoryId, (List<SelectListItem>)ViewBag.ctg, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:10px">
+        <button class="btn btn-success">SAVE</button>
+    </div>
+</form>
