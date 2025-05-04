@@ -24,7 +24,7 @@ The **MVC Store** is an e-commerce web application developed using **ASP.NET Cor
 
 ## 🧰 Technologies Used
 
-- **Framework**: ASP.NET Core MVC
+- **Framework**: ASP.NET MVC
 - **Language**: C#
 - **Database**: SQL Server
 - **Frontend**: HTML, CSS, JavaScript (Bootstrap for responsive design)
